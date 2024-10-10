@@ -47,23 +47,24 @@ sudo apt install -y lsb-release ca-certificates apt-transport-https software-pro
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list
 curl -fsSL  https://packages.sury.org/php/apt.gpg| sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sury-keyring.gpg
 sudo apt update
-# sudo apt install php8.1 libapache2-mod-php8.1 php8.1-mysql php-common php8.1-cli php8.1-xml php8.1-gd php8.1-mbstring php8.1-common php8.1-opcache php8.1-readline php8.1-curl -y
-# sudo a2enmod php8.1
-# curl -o /etc/php/8.1/apache2/php.ini "https://raw.githubusercontent.com/denyocrworld/magic_script/master/config/0_php.ini?$(date +%s)"
-# sudo systemctl restart apache2
+
+sudo apt install php8.1 libapache2-mod-php8.1 php8.1-mysql php-common php8.1-cli php8.1-xml php8.1-gd php8.1-mbstring php8.1-common php8.1-opcache php8.1-readline php8.1-curl -y
+sudo a2enmod php8.1
+curl -o /etc/php/8.1/apache2/php.ini "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/config/0_php.ini?$(date +%s)"
+sudo systemctl restart apache2
 
 sudo apt install php8.2 libapache2-mod-php8.2 php8.2-mysql php-common php8.2-cli php8.2-xml php8.2-gd php8.2-mbstring php8.2-common php8.2-opcache php8.2-readline php8.2-curl -y
 sudo a2enmod php8.2
-curl -o /etc/php/8.2/apache2/php.ini "https://raw.githubusercontent.com/denyocrworld/magic_script/master/config/0_php.ini?$(date +%s)"
+curl -o /etc/php/8.2/apache2/php.ini "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/config/0_php.ini?$(date +%s)"
 sudo systemctl restart apache2
 
 
-curl -o /etc/apache2/apache2.conf "https://raw.githubusercontent.com/denyocrworld/magic_script/master/config/0_apache.conf?$(date +%s)"
+curl -o /etc/apache2/apache2.conf "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/config/0_apache.conf?$(date +%s)"
 sudo service apache2 restart
 sudo apt-get install vsftpd -y
 systemctl start vsftpd
 systemctl enable vsftpd
-curl -o /etc/vsftpd.conf "https://raw.githubusercontent.com/denyocrworld/magic_script/master/config/0_vsftpd.conf?$(date +%s)"
+curl -o /etc/vsftpd.conf "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/config/0_vsftpd.conf?$(date +%s)"
 
 sudo systemctl restart vsftpd
 
@@ -95,7 +96,7 @@ rm -rf index.html
 curl -O https://wordpress.org/latest.zip && unzip latest.zip && mv wordpress/* /var/www/html
 mysql -u root -e "create database if not exists $MYSQL_DATABASE"
 
-curl "https://raw.githubusercontent.com/denyocrworld/magic_script/master/config/0_wp_config.php?$(date +%s)" -o /var/www/html/wp-config.php
+curl "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/config/0_wp_config.php?$(date +%s)" -o /var/www/html/wp-config.php
 sed -i "s/define('FTP_USER', '\$FTP_USER');/define('FTP_USER', '$FTP_USER_NAME');/" /var/www/html/wp-config.php
 sed -i "s/define('FTP_PASS', '\$FTP_PASS');/define('FTP_PASS', '$FTP_USER_PASSWORD');/" /var/www/html/wp-config.php
 sed -i "s/define('FTP_HOST', '\$FTP_HOST');/define('FTP_HOST', '$WEB_DOMAIN');/" /var/www/html/wp-config.php
