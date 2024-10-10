@@ -93,7 +93,8 @@ sudo chown -R "$FTP_USER_NAME:$FTP_USER_NAME" /var/www/html
 # SETUP UFW
 # ---------------
 sudo apt-get install ufw -y
+sudo ufw allow 80
 sudo ufw allow 8000
 sudo ufw allow 4000
 sudo ufw allow 3000
-sudo ufw enable -y
+sudo ufw enable
