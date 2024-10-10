@@ -8,27 +8,27 @@ curl -o install.sh "https://github.com/9code-id/magic_script/blob/master/install
 <i>**choose one</i>
 ### Apache, MariaDB, PHP, FTP
 ```
-curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/master/debian/002.apache-mariadb-php-ftp.sh?$(date +%s)"
+curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/debian/002.apache-mariadb-php-ftp.sh?$(date +%s)"
 ```
 
 ### Apache, MariaDB, PHP, FTP, Wordpress
 ```
-curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/master/debian/003.apache-mariadb-php-ftp-wordpress.sh?$(date +%s)"
+curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/debian/003.apache-mariadb-php-ftp-wordpress.sh?$(date +%s)"
 ```
 
 ### LetsEncrypt
 ```
-curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/master/debian/003.letsencrypt.sh?$(date +%s)"
+curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/debian/003.letsencrypt.sh?$(date +%s)"
 ```
 
 ### Wordpress
 ```
-curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/master/debian/004.wordpress.sh?$(date +%s)"
+curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/debian/004.wordpress.sh?$(date +%s)"
 ```
 
 ### .htaccess
 ```
-curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/master/debian/005.htaccess.sh?$(date +%s)"
+curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/debian/005.htaccess.sh?$(date +%s)"
 ```
 
 ## 2. After download with CURL, run this command to configure:
