@@ -1,9 +1,9 @@
-sudo apt-get purge apache2 &&
-sudo apt-get purge mariadb-server mariadb-client &&
-sudo apt-get purge php* &&
-sudo apt-get purge vsftpd &&
-sudo apt-get purge pure-ftpd &&
-sudo apt-get purge proftpd &&
+sudo apt-get purge apache2 -y &&
+sudo apt-get purge mariadb-server mariadb-client -y &&
+sudo apt-get purge php* -y &&
+sudo apt-get purge vsftpd -y &&
+sudo apt-get purge pure-ftpd -y &&
+sudo apt-get purge proftpd -y &&
 sudo rm -rf /var/www/html/wordpress &&
 sudo apt-get purge certbot &&
 sudo rm -rf /etc/apache2 &&
