@@ -106,7 +106,6 @@ sed -i "s/define('DB_PASSWORD', '\$DB_PASSWORD');/define('DB_PASSWORD', '$MYSQL_
 # Install Composer
 curl -sS https://getcomposer.org/installer -o composer-setup.php | php && sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
-
 # SETUP LETSENCRYPT
 # sudo apt install snapd -y
 # sudo snap install core
