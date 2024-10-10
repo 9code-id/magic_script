@@ -2,7 +2,7 @@
 
 ### Apache, MariaDB, PHP, FTP, Wordpres, LetsEncrypt
 ```
-curl -o install.sh "https://github.com/9code-id/magic_script/blob/master/install.sh?$(date +%s)"
+curl -o install.sh "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/install.sh?$(date +%s)"
 ```
 ## 1. Download Script with CURL
 <i>**choose one</i>
