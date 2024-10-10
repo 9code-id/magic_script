@@ -74,6 +74,9 @@ echo "$FTP_USER_NAME:$FTP_USER_PASSWORD" | sudo chpasswd
 usermod --home /var/www/html "$FTP_USER_NAME"
 sudo chown -R "$FTP_USER_NAME:$FTP_USER_NAME" /var/www/html
 
+# Install UFW
+sudo apt-get install ufw -y
+
 # Add .htaccess
 sudo sh -c "echo '# BEGIN WordPress
 <IfModule mod_rewrite.c>
