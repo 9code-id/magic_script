@@ -48,13 +48,14 @@ echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /et
 curl -fsSL  https://packages.sury.org/php/apt.gpg| sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sury-keyring.gpg
 sudo apt update
 
-sudo apt install php8.1 libapache2-mod-php8.1 php8.1-mysql php-common php8.1-cli php8.1-xml php8.1-gd php8.1-mbstring php8.1-common php8.1-opcache php8.1-readline php8.1-curl -y
-sudo a2enmod php8.1
-curl -o /etc/php/8.1/apache2/php.ini "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/config/0_php.ini?$(date +%s)"
-sudo systemctl restart apache2
+# sudo apt install php8.1 libapache2-mod-php8.1 php8.1-mysql php-common php8.1-cli php8.1-xml php8.1-gd php8.1-mbstring php8.1-common php8.1-opcache php8.1-readline php8.1-curl -y
+# sudo a2enmod php8.1
+# curl -o /etc/php/8.1/apache2/php.ini "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/config/0_php.ini?$(date +%s)"
+# sudo systemctl restart apache2
 
 sudo apt install php8.2 libapache2-mod-php8.2 php8.2-mysql php-common php8.2-cli php8.2-xml php8.2-gd php8.2-mbstring php8.2-common php8.2-opcache php8.2-readline php8.2-curl -y
 sudo a2enmod php8.2
+echo 123 > /etc/php/8.2/apache2/php.ini
 curl -o /etc/php/8.2/apache2/php.ini "https://raw.githubusercontent.com/9code-id/magic_script/refs/heads/master/config/0_php.ini?$(date +%s)"
 sudo systemctl restart apache2
 
